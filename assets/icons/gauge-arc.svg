@@ -1,0 +1,9 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="27.6067" height="70.0953" viewBox="0 0 27.6067 70.0953" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path id="Intersect" d="M13.542 2.46973C10.9133 12.009 10.5302 22.0663 12.4746 31.8418C14.5675 42.3636 19.2756 52.1571 26.125 60.3359C28.1193 62.7177 28.1409 66.2644 25.9443 68.4609C23.7477 70.6575 20.1685 70.6702 18.1426 68.3154C9.73619 58.5432 3.96857 46.7419 1.44141 34.0371C-0.810969 22.7136 -0.410981 11.0682 2.55371 0L13.542 2.46973Z" fill="url(#paint0_radial_0_47)" fill-opacity="0.8"/>
+<defs>
+<radialGradient id="paint0_radial_0_47" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(6.99927 7.40527) rotate(38.2464) scale(54.1156 103.472)">
+<stop stop-color="#10B981"/>
+<stop offset="1" stop-color="#10B981" stop-opacity="0"/>
+</radialGradient>
+</defs>
+</svg>

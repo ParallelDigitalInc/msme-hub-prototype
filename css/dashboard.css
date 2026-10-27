@@ -1,0 +1,912 @@
+/* Dashboard screen — Figma frame 2156:19846 */
+
+.row-1 {
+  display: flex;
+  gap: 24px;
+  height: 427px;
+}
+
+/* ---------- Daily digest ---------- */
+
+.digest {
+  flex: 1 1 797px;
+  min-width: 0;
+  height: 427px;
+  box-shadow: var(--shadow-band);
+}
+/* Two inside strokes: white, then a blue→indigo→mint gradient at 40%. */
+.digest::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  border-radius: inherit;
+  background:
+    linear-gradient(107deg, rgba(70, 139, 229, 0.16) 0%, rgba(99, 102, 241, 0.4) 45%, rgba(153, 221, 199, 0.4) 100%),
+    linear-gradient(#fff, #fff);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  pointer-events: none;
+  z-index: 5;
+}
+/* First-load shine: a bright segment travels once around the border. */
+@property --shine-a {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+.digest__shine {
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from var(--shine-a),
+    transparent 0deg 280deg,
+    rgba(129, 140, 248, 0.9) 318deg,
+    #fff 336deg,
+    rgba(94, 234, 212, 0.95) 348deg,
+    transparent 360deg
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 6;
+}
+.digest.is-shining .digest__shine {
+  animation: shine-sweep 2.6s var(--ease-in-out) 0.35s 1 both;
+}
+.digest.is-shining {
+  animation: digest-glow 2.6s var(--ease-in-out) 0.35s 1 both;
+}
+@keyframes shine-sweep {
+  0% { --shine-a: 0deg; opacity: 0; }
+  12% { opacity: 1; }
+  82% { opacity: 1; }
+  100% { --shine-a: 360deg; opacity: 0; }
+}
+@keyframes digest-glow {
+  0%, 100% { box-shadow: var(--shadow-band); }
+  45% { box-shadow: var(--shadow-band), 0 0 0 4px rgba(99, 102, 241, 0.08), 0 10px 36px rgba(99, 102, 241, 0.16); }
+}
+
+.digest__inner {
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  top: 12px;
+  height: 393px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.digest__head {
+  height: 41px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.digest__title {
+  padding: 10px;
+  font: 600 20px/21px var(--font-ui);
+  background: var(--grad-title-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.curated {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font: 500 14px/21px var(--font-ui);
+  color: var(--text-3);
+}
+.curated__chip {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: var(--r-pill);
+  background: var(--line);
+  color: var(--ink);
+}
+
+.digest__cards {
+  display: flex;
+  gap: 16px;
+}
+.dg-card {
+  --stroke: var(--border);
+  position: relative;
+  container-type: inline-size;
+  flex: 1 1 0;
+  min-width: 0;
+  height: 270.89px;
+  padding: 21px;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--r-card);
+  background: #fff;
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+.dg-card > :not(.dots):not(.glow) {
+  position: relative;
+}
+.dg-card > .dots {
+  width: calc(100% + 10px) !important;
+}
+.dg-card__icon {
+  width: 30px;
+  height: 30px;
+  background: var(--indigo-50);
+  margin-bottom: 12px;
+}
+.dg-card__icon--lg {
+  width: 32px;
+  height: 32px;
+}
+.dg-card__label {
+  margin-bottom: 6px;
+  font: 500 14px/18px var(--font-dm);
+  font-variation-settings: 'opsz' 14;
+  color: var(--text-3);
+}
+.dg-card__label--dark {
+  color: var(--text-chip);
+}
+.dg-card__text {
+  font: 400 20px/26px var(--font-figtree);
+  letter-spacing: -0.6px;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.dg-card__text em {
+  font-style: normal;
+  font-weight: 500;
+  color: var(--indigo-900);
+}
+
+.source {
+  margin-top: auto;
+  height: 31.89px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px 4px 4px;
+  border-radius: var(--r-pill);
+  background: var(--surface);
+  font: 500 12px/normal var(--font-dm);
+  font-variation-settings: 'opsz' 14;
+  color: var(--text-chip);
+  white-space: nowrap;
+}
+.source--indigo {
+  align-self: flex-start;
+  padding-right: 12px;
+  background: var(--indigo-50);
+}
+.source--wide {
+  align-self: flex-start;
+  max-width: calc(100% + 12px); /* hugs its text (207px in Figma, slightly into the card padding); truncates on narrow cards */
+  padding-right: 8px;
+}
+.source b {
+  font-weight: 500;
+  color: var(--ink);
+}
+.source--wide .source__text {
+  flex: 0 1 auto;
+}
+.source__text {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.logo-24 {
+  position: relative;
+  width: 24px;
+  height: 23.89px;
+  flex: none;
+  border: 0.75px solid var(--border);
+  border-radius: 11.94px;
+  overflow: hidden;
+  background: #fff;
+}
+.logo-24 img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.logo-24--zoom img {
+  left: -8.11%;
+  top: -7.76%;
+  width: 120.66%;
+  height: 120.66%;
+}
+.logo-24--contain img {
+  object-fit: contain;
+}
+
+/* ---------- BMR gauge card ---------- */
+
+.bmr {
+  flex: none;
+  width: 295px;
+  height: 427px;
+  padding: 21px 21px 13px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(139deg, rgba(255, 255, 255, 0.4) 34.7%, rgba(255, 255, 255, 0.32) 98.25%);
+  box-shadow: var(--shadow-band);
+}
+.bmr__top {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+.bmr__head {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font: 600 20px/26px var(--font-ui);
+}
+
+.gauge {
+  position: relative;
+  width: 150px;
+  height: 140.625px;
+}
+.gauge > * {
+  position: absolute;
+}
+.gauge img {
+  max-width: none;
+}
+.gauge__ring {
+  left: -23px;
+  top: -21px;
+  width: 198px;
+  height: 173.69px;
+}
+.gauge__centre {
+  left: 50px;
+  top: 36px;
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4.16px;
+}
+.gauge__halo {
+  position: absolute;
+  left: -81.17px;
+  top: -68.68px;
+  width: 212.29px;
+  height: 212.29px;
+}
+.gauge__label {
+  position: relative;
+  font: 500 12.49px/11.25px var(--font-figtree);
+  color: var(--text-2);
+}
+.gauge__value {
+  position: relative;
+  font: 600 40.5px/45px var(--font-ui);
+  letter-spacing: -1.125px;
+  color: var(--ink);
+}
+.gauge__chip {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4.5px;
+  padding: 3.375px 7.875px;
+  border-radius: var(--r-pill);
+  background: var(--emerald-100);
+  font: 600 7.875px/11.25px var(--font-figtree);
+  color: var(--emerald-800);
+}
+.gauge__chip img {
+  width: 5.625px;
+  height: 4.05px;
+  margin: -0.56px;
+}
+/* The ring is a 270° dial centred at (75, 75): score 1 sits at −135°, each point adds 30°.
+   --sweep is how much of the arc shows; the marker rotates about the same centre. */
+.gauge__arc {
+  left: 0;
+  top: 55.59px;
+  width: 27.61px;
+  height: 70.1px;
+  -webkit-mask: conic-gradient(from -135deg at 75px 19.41px, #000 var(--sweep, 360deg), transparent 0);
+  mask: conic-gradient(from -135deg at 75px 19.41px, #000 var(--sweep, 360deg), transparent 0);
+}
+.gauge__marker {
+  left: -6.14px;
+  top: 42px;
+  width: 28.73px;
+  height: 28.73px;
+  transform-origin: 81.14px 33px;
+  transform: rotate(var(--turn, 0deg));
+}
+.gauge__value.is-pop {
+  animation: value-pop 0.5s var(--ease-out);
+}
+.gauge__chip.is-pop {
+  animation: value-pop 0.5s var(--ease-out) 0.08s;
+}
+@keyframes value-pop {
+  0% { transform: scale(0.82); opacity: 0.4; }
+  55% { transform: scale(1.12); opacity: 1; }
+  100% { transform: scale(1); }
+}
+.gauge__scale {
+  top: 133.43px;
+  transform: translateX(-50%);
+  font: 500 10.41px/9.375px var(--font-figtree);
+  color: var(--text-2);
+}
+
+.bmr__bottom {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.risks {
+  padding: 0 8px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.8);
+}
+.risks__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  font: 600 14px/26px var(--font-ui);
+}
+.risks__head span {
+  font: 500 12px/26px var(--font-ui);
+  color: var(--text-3);
+}
+.risks__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 8px;
+  font: 500 14px/26px var(--font-ui);
+  color: var(--text-2);
+}
+.risks__head + .risks__row {
+  padding-top: 8px;
+}
+.risks__row:last-child {
+  padding-bottom: 12px;
+}
+.risks__who {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 20px tinted lender logos (BMR enquiries, loan offers) */
+.lender {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px #fff;
+  background: linear-gradient(var(--tint), var(--tint)), #fff;
+  overflow: hidden;
+}
+.lender img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.lender--1 {
+  --tint: rgba(42, 86, 146, 0.1);
+}
+.lender--1 img {
+  mix-blend-mode: multiply;
+}
+.lender--2 {
+  --tint: rgba(255, 91, 53, 0.1);
+}
+.lender--2 img {
+  object-fit: contain;
+}
+.lender--3 {
+  --tint: rgba(0, 75, 141, 0.2);
+}
+.lender--3 img {
+  left: 12.28%;
+  top: 11.76%;
+  width: 75.43%;
+  height: 75.43%;
+}
+.bmr .ai-prompt {
+  height: auto;
+  padding: 8px;
+}
+
+/* ---------- Finance your business ---------- */
+
+.finance {
+  min-height: 340px;
+  padding: 21px 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: linear-gradient(163deg, rgba(255, 255, 255, 0.5) 34.7%, rgba(255, 255, 255, 0.45) 98.25%);
+  box-shadow: 0 2px 24px 0 rgba(15, 23, 42, 0.06);
+  overflow: visible; /* let hovered cards' shadows spill out */
+}
+.finance__cards {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+.action {
+  --stroke: var(--border);
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 208px;
+  padding: 21px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  border-radius: var(--r-card);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(250, 253, 255, 0.9));
+  box-shadow: var(--shadow-card-strong);
+  overflow: hidden;
+}
+.action--hug {
+  height: auto;
+  min-height: 0;
+}
+.action > :not(.dots) {
+  position: relative;
+}
+.action > .btn {
+  margin-top: auto;
+}
+.action--hug > .btn {
+  margin-top: 0;
+}
+.action__body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.action__cat {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+  font: 600 14px/18px var(--font-ui);
+  color: var(--text-2);
+}
+.action__cat > span,
+.action__cat-l {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.action__amount {
+  font: 600 24px/32px var(--font-ui);
+  letter-spacing: -0.2px;
+  color: var(--ink);
+}
+.action__amount--2line {
+  line-height: 28px;
+}
+.action__sub {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  font: 500 13px/18px var(--font-ui);
+  color: var(--text-2);
+}
+
+/* 22px scheme logos with a 2px white ring */
+.scheme {
+  position: relative;
+  width: 22px;
+  height: 22px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+.scheme img {
+  position: absolute;
+}
+.scheme--sbi {
+  background: #ffe16b;
+}
+.scheme--sbi img {
+  left: 4.24%;
+  top: 6.86%;
+  width: 89.1%;
+  height: 87.73%;
+}
+.scheme--km {
+  background: #dc2626;
+}
+.scheme--km img {
+  position: static;
+  width: 24px;
+  height: 23.89px;
+  border: 0.75px solid var(--border);
+  border-radius: 11.94px;
+  object-fit: contain;
+}
+.scheme--bf {
+  background: #0369a1;
+}
+.scheme--bf img {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.scheme--more {
+  background: var(--border-soft);
+  font: 700 8px/10px var(--font-ui);
+  color: var(--text-proof);
+}
+
+/* ---------- Your money ---------- */
+
+.money {
+  height: 150px;
+  padding: 25px 29px;
+  background: var(--grad-band);
+  box-shadow: 0 2px 24px 0 rgba(41, 40, 47, 0.06);
+}
+.money__strip {
+  display: flex;
+  height: 100px;
+}
+.stat {
+  container-type: inline-size;
+  flex: 1 0 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 4px 24px;
+  overflow: hidden;
+}
+.stat:first-child {
+  padding-left: 0;
+}
+.money__strip .hairline {
+  width: 1px;
+  align-self: stretch;
+  background: var(--hairline);
+}
+.stat__label {
+  font: 500 13px/18px var(--font-ui);
+  color: var(--text-3);
+}
+.stat__row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.stat__value {
+  font: 600 34px/44px var(--font-ui);
+  letter-spacing: -1.2px;
+  white-space: nowrap;
+}
+.stat__spark {
+  width: 64px;
+  height: 28px;
+  flex: none;
+  overflow: visible;
+}
+.stat__spark img {
+  height: 28px;
+  max-width: none;
+}
+.stat__note {
+  font: 500 12px/18px var(--font-ui);
+  white-space: nowrap;
+}
+.stat__note--up {
+  color: var(--emerald-700);
+}
+.stat__note--warn {
+  color: var(--amber-warn);
+}
+.stat__note--neutral {
+  color: var(--text-2);
+}
+
+/* ---------- Businesses you may want to know ---------- */
+
+.businesses {
+  min-height: 384px;
+  padding: 25px 29px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: var(--grad-band);
+  overflow: visible;
+}
+.businesses__head {
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/* Cards keep a readable minimum width; when they don't fit, the row scrolls sideways. */
+.businesses__cards {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(216px, 1fr);
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  /* room for the hover lift + shadow inside the scroll area */
+  padding: 6px 0 14px;
+  margin: -6px 0 -14px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--indigo-200) transparent;
+}
+.businesses__cards > .biz {
+  scroll-snap-align: start;
+}
+/* When the row overflows, fade the right edge so it reads as "scroll for more". */
+.businesses__cards.is-scrollable:not(.is-at-end) {
+  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 56px), transparent);
+  mask-image: linear-gradient(to right, #000 calc(100% - 56px), transparent);
+}
+
+.biz {
+  --stroke: #fff;
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  height: 290px;
+  padding: 1px;
+  border-radius: var(--r-card);
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.04), 0 1px 2px 0 rgba(49, 46, 129, 0.04);
+  overflow: hidden;
+}
+.biz__cover {
+  position: relative;
+  container-type: inline-size;
+  height: 64px;
+  overflow: hidden;
+  background: linear-gradient(to right, var(--c1), var(--c2));
+}
+.biz__cover .cover-dots {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 64px;
+  opacity: 0.12;
+  background-image: var(--dot);
+  background-size: 10px 10px;
+}
+.biz__cover-img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform-origin: 0 0;
+  background-size: cover;
+  background-position: center;
+}
+.biz--rohit .biz__cover {
+  --c1: #e0e7ff;
+  --c2: #eef2ff;
+  --dot: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10'%3E%3Ccircle cx='5' cy='5' r='0.9' fill='%23312e81'/%3E%3C/svg%3E");
+}
+.biz--rohit .biz__cover-img {
+  /* Figma: 170 × 368 rotated −90°. Its rotated length tracks the card width (250.5 at 1440). */
+  width: 170px;
+  height: calc(100cqw + 117.5px);
+  transform: translate(-82px, 117px) matrix(0, -1, 1, 0, 0, 0);
+  background-image: url('../assets/img/cover-rohit.png');
+  opacity: 0.5;
+}
+/* Nandini and Sai have their cover gradients switched off in Figma. */
+.biz--nandini .biz__cover {
+  background: none;
+  --dot: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10'%3E%3Ccircle cx='5' cy='5' r='0.9' fill='%23b45309'/%3E%3C/svg%3E");
+}
+.biz--nandini .biz__cover-img {
+  width: 153px;
+  height: calc(100cqw + 5.5px);
+  transform: translate(-2.5px, 150px) matrix(0, -1, 1, 0, 0, 0);
+  background-image: url('../assets/img/cover-nandini.png');
+  opacity: 0.2;
+}
+.biz--bombay .biz__cover {
+  --c1: #d6d8ff;
+  --c2: #e1e3ff;
+  --dot: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10'%3E%3Ccircle cx='5' cy='5' r='0.9' fill='%234f4f52'/%3E%3C/svg%3E");
+}
+.biz--sai .biz__cover {
+  background: none;
+  --dot: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10'%3E%3Ccircle cx='5' cy='5' r='0.9' fill='%23334155'/%3E%3C/svg%3E");
+}
+.biz--sai .biz__cover-img {
+  width: 167px;
+  height: calc(100cqw + 45.5px);
+  transform: translate(calc(100cqw + 23px), 77px) matrix(0, -1, -1, 0, 0, 0);
+  background-image: url('../assets/img/cover-sai.png');
+  opacity: 0.6; /* Figma: layer 0.6 × paint 0.7, but its luminosity blend renders darker than CSS */
+  filter: grayscale(1);
+  mix-blend-mode: luminosity;
+}
+
+.biz__logo {
+  position: absolute;
+  left: calc(50% - 28.25px);
+  top: 36px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 0 3px #fff, var(--shadow-lift);
+  z-index: 2;
+}
+.biz__logo > img:first-child {
+  width: 56px;
+  height: 56px;
+}
+.biz__badge {
+  position: absolute;
+  left: 38px;
+  top: 38px;
+  width: 20px;
+  height: 20px;
+}
+.biz--rohit .biz__logo {
+  top: 26px;
+}
+
+.biz__body {
+  height: 224px;
+  padding: 36px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.biz__id {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  text-align: center;
+}
+.biz__name {
+  font: 600 15px/20px var(--font-ui);
+}
+.biz__meta {
+  font: 500 12px/17px var(--font-ui);
+  color: var(--text-3);
+}
+.biz__chips {
+  display: flex;
+  gap: 6px;
+}
+.proof {
+  --stroke: var(--border-soft);
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 4px 10px 4px 5px;
+  border-radius: var(--r-pill);
+  background: var(--page);
+  font: 600 11px/16px var(--font-ui);
+  color: var(--text-proof);
+  white-space: nowrap;
+}
+.proof__text {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.proof .stack {
+  --overlap: -7px;
+  padding-left: 1px;
+}
+.biz__spacer {
+  height: 3px;
+  flex: none;
+}
+.biz .btn--ghost {
+  align-self: stretch;
+}
+
+/* ---------- Desktop responsiveness ---------- */
+
+/* Each card reacts to its own width rather than the window. */
+@container (max-width: 160px) {
+  .dg-card__text {
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.4px;
+  }
+}
+@container (max-width: 210px) {
+  .stat__value {
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing: -0.8px;
+  }
+}
+@container (max-width: 185px) {
+  .stat__spark {
+    display: none;
+  }
+}
+
+/* Below the design width, finance cards share a height so their buttons line up. */
+@media (max-width: 1439px) {
+  .finance__cards {
+    align-items: stretch;
+  }
+  .action--hug > .btn {
+    margin-top: auto;
+  }
+}
+
+/* Narrow desktops: BMR drops under the digest and lays out side by side. */
+@media (max-width: 1179px) {
+  .row-1 {
+    flex-direction: column;
+    height: auto;
+  }
+  .digest {
+    flex: none;
+  }
+  .bmr {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 32px;
+    padding: 21px 25px;
+  }
+  .bmr__top {
+    width: 300px;
+    flex: none;
+  }
+  .bmr__bottom {
+    flex: 1;
+    justify-content: space-between;
+  }
+}

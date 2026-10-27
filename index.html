@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MSME Hub — Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Figtree:wght@400;500;600&family=Nunito:wght@900&family=Plus+Jakarta+Sans:wght@500;600;700&family=Urbanist:wght@400&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+<div class="app">
+  <div class="backdrop backdrop--bl" aria-hidden="true"></div>
+  <div class="backdrop backdrop--tr" aria-hidden="true"></div>
+
+  <!-- ============ Sidebar ============ -->
+  <aside class="sidebar">
+    <button class="biz-switch" type="button">
+      <span class="biz-switch__id">
+        <span class="biz-switch__avatar">RF</span>
+        <span class="biz-switch__name">Ratan Fabrics<br>Pvt. Ltd.</span>
+      </span>
+      <img src="assets/icons/caret-up-down.svg" alt="" width="16" height="16">
+    </button>
+
+    <a class="nav-home" href="#" aria-current="page">
+      <img src="assets/icons/home.svg" alt="" width="16" height="16">
+      <span class="nav-label">Dashboard</span>
+    </a>
+
+    <nav class="nav-group" data-collapsible>
+      <button class="nav-group__head" type="button" aria-expanded="true"><span class="nav-group__label" style="width:116px;text-align:left">Know your business</span><img src="assets/icons/chev-down.svg" alt="" width="12" height="12"></button>
+      <div class="nav-group__body">
+        <div class="nav-group__items">
+          <a class="nav-item" href="#"><span class="nav-item__ico"><img src="assets/icons/nav-bmr.svg" alt="" width="14" height="13"></span><span class="nav-label">BMR Insights</span></a>
+          <a class="nav-item" href="#"><span class="nav-item__ico"><img src="assets/icons/nav-gst-pouch.svg" alt="" width="12" height="14"><span class="nav-item__gst">GST</span></span><span class="nav-label">GST</span></a>
+          <a class="nav-item" href="#"><span class="nav-item__ico"><img src="assets/icons/nav-taxes.svg" alt="" width="14" height="14"></span><span class="nav-label">Taxes</span></a>
+          <a class="nav-item" href="#"><span class="nav-item__ico"><img src="assets/icons/nav-bank.svg" alt="" width="13" height="13"></span><span class="nav-label">Bank</span></a>
+        </div>
+      </div>
+    </nav>
+
+    <nav class="nav-group" data-collapsible>
+      <button class="nav-group__head" type="button" aria-expanded="true"><span class="nav-group__label">Get Financing</span><img src="assets/icons/chev-down.svg" alt="" width="12" height="12"></button>
+      <div class="nav-group__body">
+        <div class="nav-group__items" style="--gap:12px">
+          <a class="nav-item" href="#"><span class="nav-item__ico"><img src="assets/icons/nav-loans.svg" alt="" width="14" height="12"></span><span class="nav-label">Loans</span></a>
+          <a class="nav-item" href="#"><span class="nav-item__ico"><img src="assets/icons/nav-subsidies.svg" alt="" width="14" height="14"></span><span class="nav-label">Govt. Subsidies</span></a>
+          <a class="nav-item" href="#"><span class="nav-item__ico"><img src="assets/icons/nav-equity.svg" alt="" width="14" height="12"></span><span class="nav-label">Equity</span></a>
+          <a class="nav-item" href="#"><span class="nav-item__ico"><img src="assets/icons/nav-insurance.svg" alt="" width="14" height="14"></span><span class="nav-label">Insurance</span></a>
+        </div>
+      </div>
+    </nav>
+
+    <nav class="nav-group" data-collapsible>
+      <button class="nav-group__head" type="button" aria-expanded="true"><span class="nav-group__label">Grow Business</span><img src="assets/icons/chev-down.svg" alt="" width="12" height="12"></button>
+      <div class="nav-group__body">
+        <div class="nav-group__items">
+          <a class="nav-item" href="#"><span class="nav-item__ico"><img src="assets/icons/nav-news.svg" alt="" width="14" height="12"></span><span class="nav-label">Business News</span></a>
+          <a class="nav-item" href="#"><span class="nav-item__ico"><img src="assets/icons/nav-discover.svg" alt="" width="13" height="13"></span><span class="nav-label">Discover Buyers</span></a>
+        </div>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- ============ Main ============ -->
+  <main class="main">
+    <header class="topbar">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <ol><li><span aria-current="page">Dashboard</span></li></ol>
+      </nav>
+
+      <div class="topbar__actions">
+        <label class="search">
+          <img src="assets/icons/search.svg" alt="" width="14" height="14">
+          <input type="search" placeholder="Search everything...">
+          <span class="kbd">⌘</span><span class="kbd">K</span>
+        </label>
+
+        <!-- Language -->
+        <div class="menu" data-menu>
+          <button class="pill-btn" type="button" aria-haspopup="menu" aria-expanded="false" aria-label="Language: English" data-tip="Language">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.75 3.5h7M5.25 2v1.5M7.5 3.5c-.5 2.6-2.3 4.7-5 5.75M3.6 5.5c.7 1.4 1.9 2.6 3.4 3.3M8.5 14l2.5-6 2.5 6M9.3 12.2h3.4"/></svg>
+            <span data-lang-label>EN</span>
+            <img src="assets/icons/caret-down.svg" alt="" width="12" height="12">
+          </button>
+          <div class="pop pop--lang" role="menu" aria-label="Choose language">
+            <p class="pop__head">Choose language</p>
+            <button class="pop__item" role="menuitemradio" aria-checked="true" data-lang="en" data-code="EN"><span class="pop__item-l">English<small>English</small></span><svg class="tick" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8.5l3 3 6-7"/></svg></button>
+            <button class="pop__item" role="menuitemradio" aria-checked="false" data-lang="hi" data-code="हिं"><span class="pop__item-l">हिन्दी<small>Hindi</small></span><svg class="tick" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8.5l3 3 6-7"/></svg></button>
+            <button class="pop__item" role="menuitemradio" aria-checked="false" data-lang="gu" data-code="ગુ"><span class="pop__item-l">ગુજરાતી<small>Gujarati</small></span><svg class="tick" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8.5l3 3 6-7"/></svg></button>
+            <button class="pop__item" role="menuitemradio" aria-checked="false" data-lang="mr" data-code="मरा"><span class="pop__item-l">मराठी<small>Marathi</small></span><svg class="tick" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8.5l3 3 6-7"/></svg></button>
+            <button class="pop__item" role="menuitemradio" aria-checked="false" data-lang="ta" data-code="த"><span class="pop__item-l">தமிழ்<small>Tamil</small></span><svg class="tick" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8.5l3 3 6-7"/></svg></button>
+            <button class="pop__item" role="menuitemradio" aria-checked="false" data-lang="bn" data-code="বা"><span class="pop__item-l">বাংলা<small>Bengali</small></span><svg class="tick" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8.5l3 3 6-7"/></svg></button>
+          </div>
+        </div>
+
+        <!-- Support -->
+        <div class="menu" data-menu>
+          <button class="icon-btn" type="button" aria-haspopup="dialog" aria-expanded="false" aria-label="Call support" data-tip="Call support">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.42 2.5H3.5a1 1 0 0 0-1 1.07A10.5 10.5 0 0 0 12.43 13.5a1 1 0 0 0 1.07-1v-1.92a1 1 0 0 0-.68-.95l-2.12-.7a1 1 0 0 0-1.03.24l-.86.86a8 8 0 0 1-3.64-3.64l.86-.86a1 1 0 0 0 .24-1.03l-.7-2.12a1 1 0 0 0-.95-.68Z"/></svg>
+          </button>
+          <div class="pop pop--support" role="dialog" aria-label="Call support">
+            <div class="support">
+              <span class="icon-circle" style="width:36px;height:36px;background:var(--indigo-50);color:var(--indigo-700)">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.42 2.5H3.5a1 1 0 0 0-1 1.07A10.5 10.5 0 0 0 12.43 13.5a1 1 0 0 0 1.07-1v-1.92a1 1 0 0 0-.68-.95l-2.12-.7a1 1 0 0 0-1.03.24l-.86.86a8 8 0 0 1-3.64-3.64l.86-.86a1 1 0 0 0 .24-1.03l-.7-2.12a1 1 0 0 0-.95-.68Z"/></svg>
+              </span>
+              <div>
+                <p class="support__label">MSME Hub helpline</p>
+                <a class="support__num" href="tel:+919876543210">+91 98765 43210</a>
+                <p class="support__meta">Mon–Sat · 9 am – 7 pm</p>
+                <p class="support__meta">Hindi, English, Gujarati</p>
+              </div>
+            </div>
+            <div class="support__actions">
+              <a class="btn btn--primary" href="tel:+919876543210">Call now</a>
+              <button class="btn btn--secondary stroke" type="button" data-callback>Request a callback</button>
+              <p class="support__done" role="status">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7"/></svg>
+                We'll call you within 2 hours
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Messages -->
+        <div class="menu" data-menu>
+          <button class="icon-btn" type="button" aria-haspopup="dialog" aria-expanded="false" aria-label="Messages, 2 unread" data-tip="Messages">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.5 9.75c0 .69-.56 1.25-1.25 1.25H6.5l-3 2.5V4.25C3.5 3.56 4.06 3 4.75 3h7.5c.69 0 1.25.56 1.25 1.25z"/><path d="M6 6.25h4.5M6 8.5h2.75"/></svg>
+            <span class="badge">2</span>
+          </button>
+          <div class="pop pop--msgs" role="dialog" aria-label="Messages">
+            <p class="pop__head">Messages <small>2 new</small></p>
+            <a class="pop__item msg is-unread" href="#">
+              <span class="msg__avatar" style="background:#312e81">AT</span>
+              <span class="msg__body">
+                <span class="msg__top"><span>Aarav Textiles</span><time>10:42 am</time></span>
+                <span class="msg__text">Thanks for connecting! Can you share your rates for combed cotton yarn?</span>
+              </span>
+            </a>
+            <a class="pop__item msg is-unread" href="#">
+              <span class="msg__avatar" style="background:#0e7490">MC</span>
+              <span class="msg__body">
+                <span class="msg__top"><span>Mehta &amp; Co. · Your CA</span><time>Yesterday</time></span>
+                <span class="msg__text">Your October GST summary is ready. ₹2.5 L input tax credit is still unclaimed.</span>
+              </span>
+            </a>
+            <a class="pop__item msg" href="#">
+              <span class="msg__avatar" style="background:#dc2626">KM</span>
+              <span class="msg__body">
+                <span class="msg__top"><span>Kotak Mahindra Bank</span><time>Mon</time></span>
+                <span class="msg__text">Your Key Fact Statement for the working capital loan is attached.</span>
+              </span>
+            </a>
+            <a class="pop__foot" href="#">Open inbox <img src="assets/icons/arrow-link.svg" alt="" width="16" height="16"></a>
+          </div>
+        </div>
+
+        <button class="icon-btn" type="button" aria-label="Notifications" data-tip="Notifications">
+          <img src="assets/icons/bell.svg" alt="" width="16" height="16">
+          <img class="icon-btn__dot" src="assets/icons/bell-dot.svg" alt="" width="7" height="7">
+        </button>
+
+        <button class="ask-ai" type="button">
+          <span class="orb"><img src="assets/icons/orb.svg" alt=""></span>
+          <span class="grad-text">Ask AI Mitra</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Row 1: Daily digest + BMR -->
+    <div class="row-1">
+      <section class="band digest" data-shine>
+        <div class="dots" style="left:-5px;top:-3px;opacity:.14"></div>
+        <div class="dots" style="left:301px;top:-3px;opacity:.08"></div>
+        <div class="dots" style="left:610px;top:-3px;opacity:.14"></div>
+        <div class="dots" style="left:916px;top:-3px;opacity:.08"></div>
+        <div class="dots" style="left:1222px;top:-3px;opacity:.14"></div>
+        <div class="dots" style="left:1528px;top:-3px;opacity:.08"></div>
+        <div class="digest__shine" aria-hidden="true"></div>
+
+        <div class="digest__inner">
+          <div>
+            <div class="digest__head">
+              <h2 class="digest__title">Daily digest</h2>
+              <div class="curated">
+                Curated by
+                <span class="curated__chip"><span class="orb orb--sm"><img src="assets/icons/orb.svg" alt=""></span>AI Mitra</span>
+              </div>
+            </div>
+
+            <div class="digest__cards">
+              <!-- Card 1 -->
+              <article class="dg-card stroke lift">
+                <div class="dots" style="left:-5px;top:-3px;opacity:.14"></div>
+                <div class="dots" style="left:-5px;top:32px;opacity:.08"></div>
+                <div class="glow" style="left:180px;top:-24.89px;background:rgba(99,102,241,.22)"></div>
+                <div class="glow" style="left:0;top:0;width:44px;height:135px;transform-origin:0 0;transform:matrix(.771,-.637,.637,.771,-67.97,208.61);background:#6366f1;opacity:.3;filter:blur(62px)"></div>
+                <span class="icon-circle dg-card__icon dg-card__icon--lg"><img src="assets/icons/dg-give-star.svg" alt="" width="16" height="16"></span>
+                <p class="dg-card__label">Government subsidies</p>
+                <p class="dg-card__text">You’re eligible<br>for up to <em>₹50 L</em><br>in subsidies<br>for <em>2 schemes</em></p>
+                <div class="source source--indigo">
+                  <span class="stack" style="--overlap:-2px">
+                    <span class="logo-24 logo-24--zoom"><img src="assets/img/src-handlooms.png" alt=""></span>
+                    <span class="logo-24 logo-24--contain"><img src="assets/img/src-handlooms-2.png" alt=""></span>
+                  </span>
+                  Handlooms Dept. +1
+                </div>
+              </article>
+
+              <!-- Card 2 -->
+              <article class="dg-card stroke lift">
+                <div class="dots" style="left:-5px;top:-3px;opacity:.14"></div>
+                <div class="dots" style="left:-5px;top:32px;opacity:.08"></div>
+                <div class="glow" style="left:-104px;top:215px;background:#c7d2fe;opacity:.5"></div>
+                <div class="glow" style="left:156px;top:-46px;background:rgba(99,102,241,.22);opacity:.9"></div>
+                <span class="icon-circle dg-card__icon"><img src="assets/icons/dg-money-transfer.svg" alt="" width="14" height="12"></span>
+                <p class="dg-card__label">Loans</p>
+                <p class="dg-card__text">Your <em>KFS</em> for Kotak<br>Mahindra Working<br>Capital Loan<br>is ready</p>
+                <div class="source">
+                  <span class="logo-24"><img src="assets/img/src-kotak.png" alt=""></span>
+                  <span class="source__text">Kotak Mahindra Bank</span>
+                </div>
+              </article>
+
+              <!-- Card 3 -->
+              <article class="dg-card stroke lift">
+                <div class="glow" style="left:-104px;top:215px;background:#c7d2fe;opacity:.5"></div>
+                <div class="glow" style="left:156px;top:-46px;background:rgba(99,102,241,.22);opacity:.9"></div>
+                <div class="dots" style="left:-5px;top:-3px;opacity:.14"></div>
+                <div class="dots" style="left:-5px;top:32px;opacity:.08"></div>
+                <div class="glow" style="left:-122px;top:249px;background:#ffedd5;opacity:.35"></div>
+                <span class="icon-circle dg-card__icon"><img src="assets/icons/dg-bank.svg" alt="" width="14" height="14"></span>
+                <p class="dg-card__label dg-card__label--dark">Your business</p>
+                <p class="dg-card__text">Your bank balance<br>is <em>up 12%</em> this month</p>
+                <div class="source source--wide">
+                  <span class="logo-24"><img src="assets/img/src-sbi.png" alt=""></span>
+                  <span class="source__text">SBI Account ****7628, <b>+4</b></span>
+                  <img src="assets/icons/caret-down.svg" alt="" width="12" height="12">
+                </div>
+                <div class="glow" style="left:239px;top:-96px;background:rgba(99,102,241,.22);z-index:3"></div>
+              </article>
+            </div>
+          </div>
+
+          <a class="ai-prompt" href="#" data-questions="Who should I connect with this week?|Which buyers are paying me late?|Any new schemes I qualify for?|What changed in my business since last week?">
+            <span class="ai-prompt__q">
+              <span class="orb"><img src="assets/icons/orb.svg" alt=""></span>
+              <span class="grad-text ai-prompt__text">Who should I connect with this week?</span>
+            </span>
+            <img src="assets/icons/arrow-right.svg" alt="" width="16" height="16">
+          </a>
+        </div>
+      </section>
+
+      <!-- BMR -->
+      <section class="band bmr stroke">
+        <div class="bmr__top">
+          <h2 class="bmr__head">Bharat MSME Rank <img src="assets/icons/info.svg" alt="" width="16" height="16"></h2>
+          <div class="gauge" role="img" aria-label="BMR 3 of 10, Strong" data-gauge data-from="2" data-to="3">
+            <img class="gauge__ring" src="assets/icons/gauge-ring.svg" alt="">
+            <div class="gauge__centre">
+              <img class="gauge__halo" src="assets/icons/gauge-halo.svg" alt="">
+              <span class="gauge__label">BMR</span>
+              <span class="gauge__value">3</span>
+              <span class="gauge__chip"><img src="assets/icons/gauge-check.svg" alt="">Strong</span>
+            </div>
+            <img class="gauge__arc" src="assets/icons/gauge-arc.svg" alt="">
+            <img src="assets/icons/gauge-tick0.svg" alt="" style="left:3.03px;top:90.53px">
+            <img src="assets/icons/gauge-tick1.svg" alt="" style="left:21px;top:23.5px">
+            <img src="assets/icons/gauge-tick2.svg" alt="" style="left:54px;top:3.49px">
+            <img src="assets/icons/gauge-tick3.svg" alt="" style="left:93.17px;top:3.49px">
+            <img src="assets/icons/gauge-tick4.svg" alt="" style="left:121px;top:22.5px">
+            <img src="assets/icons/gauge-tick5.svg" alt="" style="left:137.5px;top:56.5px">
+            <img src="assets/icons/gauge-tick6.svg" alt="" style="left:136.5px;top:91.5px">
+            <img class="gauge__marker" src="assets/icons/gauge-marker.svg" alt="">
+            <span class="gauge__scale" style="left:27.04px">1</span>
+            <span class="gauge__scale" style="left:124.81px">10</span>
+          </div>
+        </div>
+
+        <div class="bmr__bottom">
+          <div class="risks">
+            <div class="risks__head">Score Risks (2) <span>Updated 18 Oct</span></div>
+            <div class="risks__row">4 Cheque Bounces <img src="assets/icons/warning.svg" alt="Risk" width="16" height="16"></div>
+            <div class="risks__row">
+              <span class="risks__who">13 Loan Enquiries
+                <span class="stack">
+                  <span class="lender lender--1"><img src="assets/img/logo-lender-1.png" alt=""></span>
+                  <span class="lender lender--2"><img src="assets/img/logo-lender-2.png" alt=""></span>
+                  <span class="lender lender--3"><img src="assets/img/logo-lender-3.png" alt=""></span>
+                </span>
+              </span>
+              <img src="assets/icons/warning.svg" alt="Risk" width="16" height="16">
+            </div>
+          </div>
+          <a class="ai-prompt" href="#" data-questions="How do I improve?|Why did my rank go up?|What’s hurting my score?|How do I reach BMR 4?">
+            <span class="ai-prompt__q">
+              <span class="orb"><img src="assets/icons/orb.svg" alt=""></span>
+              <span class="grad-text ai-prompt__text">How do I improve?</span>
+            </span>
+            <img src="assets/icons/arrow-right.svg" alt="" width="16" height="16">
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <!-- Finance your business -->
+    <section class="band finance stroke">
+      <h2 class="band__title">Finance your business</h2>
+
+      <div class="finance__cards">
+        <article class="action action--hug stroke lift">
+          <div class="dots" style="left:-53px;top:20px;opacity:.06"></div>
+          <div class="dots" style="left:253px;top:19px;opacity:.06"></div>
+          <div class="dots" style="left:-53px;top:-13px;opacity:.1"></div>
+          <div class="dots" style="left:253px;top:-14px;opacity:.1"></div>
+          <div class="action__body">
+            <div class="action__cat">
+              <span><span class="icon-circle" style="width:30px;height:30px;background:var(--tint-loans)"><img src="assets/icons/fin-loans.svg" alt="" width="16" height="16"></span>Loans</span>
+            </div>
+            <div>
+              <p class="action__amount">Up to ₹18.4 L</p>
+              <div class="action__sub">
+                <span class="stack">
+                  <span class="lender lender--1"><img src="assets/img/logo-lender-1.png" alt=""></span>
+                  <span class="lender lender--2"><img src="assets/img/logo-lender-2.png" alt=""></span>
+                  <span class="lender lender--3"><img src="assets/img/logo-lender-3.png" alt=""></span>
+                </span>
+                7 offers available
+              </div>
+            </div>
+          </div>
+          <a class="btn btn--primary" href="#">Explore loan offers</a>
+        </article>
+
+        <article class="action stroke lift">
+          <div class="dots" style="left:-53px;top:20px;opacity:.06"></div>
+          <div class="dots" style="left:253px;top:19px;opacity:.06"></div>
+          <div class="action__body">
+            <div class="action__cat">
+              <span><span class="icon-circle" style="width:32px;height:32px;background:var(--tint-subsidies)"><img src="assets/icons/fin-gift.svg" alt="" style="width:17.07px;height:17.07px"></span>Government subsidies</span>
+            </div>
+            <div>
+              <p class="action__amount">Up to ₹75 L</p>
+              <div class="action__sub">
+                <span class="stack" style="--overlap:-6px">
+                  <span class="scheme scheme--sbi"><img src="assets/img/scheme-sbi.png" alt=""></span>
+                  <span class="scheme scheme--km"><img src="assets/img/src-handlooms-2.png" alt=""></span>
+                  <span class="scheme scheme--bf"><img src="assets/img/scheme-bf.png" alt=""></span>
+                  <span class="scheme scheme--more">+4</span>
+                </span>
+                9 schemes found
+              </div>
+            </div>
+          </div>
+          <a class="btn btn--secondary stroke" href="#">See schemes<img src="assets/icons/arrow-white.svg" alt="" width="14" height="14"></a>
+          <div class="dots" style="left:-53px;top:-13px;opacity:.1"></div>
+          <div class="dots" style="left:253px;top:-14px;opacity:.1"></div>
+        </article>
+
+        <article class="action stroke lift">
+          <div class="dots" style="left:-52px;top:20px;opacity:.06"></div>
+          <div class="dots" style="left:254px;top:19px;opacity:.06"></div>
+          <div class="dots" style="left:-52px;top:-13px;opacity:.1"></div>
+          <div class="dots" style="left:254px;top:-14px;opacity:.1"></div>
+          <div class="action__body">
+            <div class="action__cat">
+              <span class="action__cat-l"><span class="icon-circle" style="width:32px;height:32px;background:var(--tint-gst)"><img src="assets/icons/fin-gst.svg" alt="" style="width:17.07px;height:17.07px"></span>Insights · GST &amp; bank</span>
+              <span class="chip chip--due">Due on 30 Nov</span>
+            </div>
+            <p class="action__amount action__amount--2line">₹2.5 L input tax<br>credit unclaimed</p>
+          </div>
+          <a class="btn btn--secondary stroke" href="#">Send to my CA</a>
+        </article>
+      </div>
+
+      <a class="ai-prompt" href="#" data-questions="How much can I safely borrow?|Which loan offer is cheapest for me?|What EMI can my cash flow handle?|Can I claim my ₹2.5 L input tax credit?">
+        <span class="ai-prompt__q">
+          <span class="orb"><img src="assets/icons/orb.svg" alt=""></span>
+          <span class="grad-text ai-prompt__text">How much can I safely borrow?</span>
+        </span>
+        <img src="assets/icons/arrow-right.svg" alt="" width="16" height="16">
+      </a>
+    </section>
+
+    <!-- Your money -->
+    <section class="band money stroke">
+      <div class="money__strip">
+        <div class="stat">
+          <p class="stat__label">Money in bank</p>
+          <div class="stat__row">
+            <p class="stat__value">₹38.4 L</p>
+            <span class="stat__spark"><img src="assets/icons/spark-bank.svg" alt=""></span>
+          </div>
+          <p class="stat__note stat__note--up">↑ 12% vs September</p>
+        </div>
+        <div class="hairline"></div>
+        <div class="stat">
+          <p class="stat__label">Receivables due</p>
+          <div class="stat__row">
+            <p class="stat__value">₹18.2 L</p>
+            <span class="stat__spark"><img src="assets/icons/spark-receivables.svg" alt=""></span>
+          </div>
+          <p class="stat__note stat__note--warn">7 invoices · 3 overdue</p>
+        </div>
+        <div class="hairline"></div>
+        <div class="stat">
+          <p class="stat__label">Ongoing EMIs</p>
+          <div class="stat__row">
+            <p class="stat__value">₹4.2 L</p>
+          </div>
+          <p class="stat__note stat__note--neutral">Next EMI on 5 Nov · ₹1.4 L</p>
+        </div>
+        <div class="hairline"></div>
+        <div class="stat">
+          <p class="stat__label">Sales · FY 2025–26</p>
+          <div class="stat__row">
+            <p class="stat__value">₹7.07 Cr</p>
+            <span class="stat__spark"><img src="assets/icons/spark-sales.svg" alt=""></span>
+          </div>
+          <p class="stat__note stat__note--up">↑ 12% vs last year</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Businesses you may want to know -->
+    <section class="band businesses stroke">
+      <div class="businesses__head">
+        <h2 class="band__title">Businesses you may want to know</h2>
+        <a class="link" href="#">See all <img src="assets/icons/arrow-link.svg" alt="" width="16" height="16"></a>
+      </div>
+
+      <div class="businesses__cards" data-scroll-fade>
+        <article class="biz biz--rohit stroke lift">
+          <div class="biz__cover"><div class="cover-dots"></div><div class="biz__cover-img"></div></div>
+          <div class="biz__body">
+            <div class="biz__id"><p class="biz__name">Rohit Apparel</p><p class="biz__meta">Garment maker · Ahmedabad</p></div>
+            <div class="biz__chips">
+              <span class="chip chip--neutral">BMR 2</span>
+              <span class="chip chip--verified"><img src="assets/icons/check-verified.svg" alt="" width="12" height="12">Udyam verified</span>
+            </div>
+            <div class="proof stroke">
+              <span class="stack"><span class="avatar" style="background:#312e81">AT</span></span>
+              <span class="proof__text">Buys cotton, like Aarav Textiles</span>
+            </div>
+            <div class="biz__spacer"></div>
+            <a class="btn btn--ghost stroke" href="#">Connect</a>
+          </div>
+          <div class="biz__logo"><img src="assets/img/biz-rohit.png" alt="Rohit Apparel"><img class="biz__badge" src="assets/icons/badge-verified.svg" alt="Verified"></div>
+        </article>
+
+        <article class="biz biz--nandini stroke lift">
+          <div class="biz__cover"><div class="cover-dots"></div><div class="biz__cover-img"></div></div>
+          <div class="biz__body">
+            <div class="biz__id"><p class="biz__name">Nandini Fashions</p><p class="biz__meta">Garment maker · Vadodara</p></div>
+            <div class="biz__chips"><span class="chip chip--neutral">BMR 4</span></div>
+            <div class="proof stroke">
+              <span class="stack">
+                <span class="avatar" style="background:#312e81">AT</span>
+                <span class="avatar" style="background:#0e7490">SG</span>
+                <span class="avatar" style="background:#4338ca">PT</span>
+              </span>
+              <span class="proof__text">3 you know work with them</span>
+            </div>
+            <div class="biz__spacer"></div>
+            <a class="btn btn--ghost stroke" href="#">Connect</a>
+          </div>
+          <div class="biz__logo"><img src="assets/img/biz-nandini.png" alt="Nandini Fashions"></div>
+        </article>
+
+        <article class="biz biz--bombay stroke lift">
+          <div class="biz__cover"><div class="cover-dots"></div></div>
+          <div class="biz__body">
+            <div class="biz__id"><p class="biz__name">Bombay Linen Exports</p><p class="biz__meta">Exporter · Mumbai</p></div>
+            <div class="biz__chips">
+              <span class="chip chip--neutral">BMR 3</span>
+              <span class="chip chip--verified"><img src="assets/icons/check-verified.svg" alt="" width="12" height="12">Udyam verified</span>
+            </div>
+            <div class="proof stroke">
+              <img src="assets/icons/proof-search.svg" alt="" width="22" height="22">
+              <span class="proof__text">Looking for cotton suppliers</span>
+            </div>
+            <div class="biz__spacer"></div>
+            <a class="btn btn--ghost stroke" href="#">Connect</a>
+          </div>
+          <div class="biz__logo"><img src="assets/img/biz-bombay.png" alt="Bombay Linen Exports"><img class="biz__badge" src="assets/icons/badge-verified.svg" alt="Verified"></div>
+        </article>
+
+        <article class="biz biz--sai stroke lift">
+          <div class="biz__cover"><div class="cover-dots"></div><div class="biz__cover-img"></div></div>
+          <div class="biz__body">
+            <div class="biz__id"><p class="biz__name">Sai Job Works</p><p class="biz__meta">Dyeing job worker · 4 km away</p></div>
+            <div class="biz__chips">
+              <span class="chip chip--neutral">BMR 5</span>
+              <span class="chip chip--verified"><img src="assets/icons/check-verified.svg" alt="" width="12" height="12">Udyam verified</span>
+            </div>
+            <div class="proof stroke">
+              <span class="stack">
+                <span class="avatar" style="background:#0e7490">SG</span>
+                <span class="avatar" style="background:#b45309">MT</span>
+              </span>
+              <span class="proof__text">2 you know use them</span>
+            </div>
+            <div class="biz__spacer"></div>
+            <a class="btn btn--ghost stroke" href="#">Connect</a>
+          </div>
+          <div class="biz__logo"><img src="assets/img/biz-sai.png" alt="Sai Job Works"><img class="biz__badge" src="assets/icons/badge-verified.svg" alt="Verified"></div>
+        </article>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script src="js/app.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>

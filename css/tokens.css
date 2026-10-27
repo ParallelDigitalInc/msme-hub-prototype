@@ -1,0 +1,113 @@
+/* OPL MSME Hub — design tokens
+   Values read from Figma file FAd4JVd8P2psGsoC014XIv. Light mode only. */
+
+:root {
+  /* Text */
+  --ink: #0f172a;
+  --text-2: #475569;
+  --text-3: #6b7588;
+  --text-nav: #4b4f63;
+  --text-group: #1a1a2e;
+  --text-chip: #525252;
+  --text-proof: #334155;
+  --placeholder: #737373;
+
+  /* Surfaces */
+  --page: #f8fafc;
+  --surface: #f1f5f9;
+  --line: #eef0f4;
+  --border: #e5e5e5;
+  --border-soft: #e2e8f0;
+  --hairline: rgba(15, 23, 42, 0.08);
+
+  /* Indigo — brand */
+  --indigo-50: #eef0fe;
+  --indigo-100: #e0e7ff;
+  --indigo-200: #c7d2fe;
+  --indigo-500: #6366f1;
+  --indigo-600: #4f46e5;
+  --indigo-700: #4338ca;
+  --indigo-800: #3730a3;
+  --indigo-900: #312e81;
+  --cyan-700: #0e7490;
+
+  /* Meaning */
+  --teal-600: #0d9488;
+  --teal-50: #f0fdfa;
+  --teal-700: #0f766e;
+  --emerald-100: #d1fae5;
+  --emerald-700: #047857;
+  --emerald-800: #065f46;
+  --amber-700: #b45309;
+  --amber-warn: #a16207;
+  --warning-subtle: #feeeda;
+
+  /* Icon-circle tints */
+  --tint-loans: #e0f7f7;
+  --tint-subsidies: #fae8ff;
+  --tint-gst: #fef3c7;
+
+  /* Gradients */
+  --grad-ai-text: linear-gradient(101deg, #312e81 2.43%, #0e7490 131.79%);
+  --grad-title-text: linear-gradient(101deg, #050096 0%, #0e7490 130%);
+  --grad-band: linear-gradient(163deg, rgba(255, 255, 255, 0.5) 34.7%, rgba(255, 255, 255, 0.4) 98.25%);
+  --grad-band-strong: linear-gradient(163deg, rgba(255, 255, 255, 0.5) 34.7%, rgba(255, 255, 255, 0.45) 98.25%);
+
+  /* Elevation */
+  --shadow-shell: 0 2px 24px 0 rgba(0, 0, 0, 0.04);
+  --shadow-band: 0 2px 24px 0 rgba(0, 0, 0, 0.06);
+  --shadow-card: 0 2px 6px 0 rgba(0, 0, 0, 0.04);
+  --shadow-card-strong: 0 2px 6px 0 rgba(0, 0, 0, 0.07);
+  --shadow-lift: 0 4px 10px 0 rgba(15, 23, 42, 0.12);
+  --shadow-ai: 0 6px 16px 0 rgba(99, 102, 241, 0.14);
+
+  /* Radius */
+  --r-shell: 16px;
+  --r-band: 24px;
+  --r-card: 20px;
+  --r-pill: 999px;
+
+  /* Type */
+  --font-ui: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-figtree: 'Figtree', system-ui, sans-serif;
+  --font-dm: 'DM Sans', system-ui, sans-serif;
+  --font-urbanist: 'Urbanist', system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--page);
+  color: var(--ink);
+  font-family: var(--font-ui);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+img {
+  display: block;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
