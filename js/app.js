@@ -105,4 +105,23 @@
 
     setTimeout(() => setInterval(next, ROTATE_EVERY), 2400 + index * STAGGER);
   });
+
+  /* ---------- Section tabs and filter chips (visual only in the prototype) ---------- */
+
+  const tabs = [...document.querySelectorAll('.tab')];
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      tabs.forEach((t) => t.setAttribute('aria-selected', String(t === tab)));
+    });
+  });
+
+  /* ---------- Filter chips: one of the quick filters is on at a time ---------- */
+
+  const chips = [...document.querySelectorAll('.fchip[data-filter]')];
+  chips.forEach((chip) => {
+    chip.addEventListener('click', () => {
+      chips.forEach((c) => c.classList.toggle('is-on', c === chip));
+    });
+  });
+
 })();

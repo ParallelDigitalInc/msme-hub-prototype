@@ -1,4 +1,4 @@
-/* Loans screen — Figma frame 2230:13296 */
+/* Finance Hub screens: Loans (Figma 2230:13296) and Government Subsidies (2230:30031) */
 
 /* The Loans frame sits on a cooler page than the dashboard (#f0f4f8 vs #f8fafc); the glass
    panels and white chips need it to read. */
@@ -6,15 +6,15 @@ body {
   --page: #f0f4f8;
 }
 
-.main--loans {
+.main--finance {
   gap: 12px;
 }
-.loans {
+.finance {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
-.loans__top {
+.finance__top {
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -58,7 +58,7 @@ body {
 
 /* ---------- Safe borrowing limit + CIBIL rank ---------- */
 
-.loans__row {
+.hero-row {
   display: flex;
   gap: 24px;
   align-items: stretch;
@@ -698,7 +698,7 @@ body {
 }
 
 @media (max-width: 1179px) {
-  .loans__row {
+  .hero-row {
     flex-wrap: wrap;
   }
   .cmr {
@@ -730,4 +730,253 @@ body {
     transform: none;
     transition: none;
   }
+}
+
+/* ======================================================================
+   Government Subsidies — Figma frame 2230:30031
+   ====================================================================== */
+
+/* Hero card: same card as Loans, different glow position and a bolder scheme count */
+.limit__glow--sub {
+  right: -50px;
+  top: -115px;
+  opacity: 0.4;
+}
+.limit__label b {
+  font-weight: 600;
+  color: var(--ink);
+}
+.pick--w212 {
+  width: 212px;
+  align-items: center;
+}
+.pick--w221 {
+  width: 221px;
+  align-items: center;
+}
+.pick--w221 .pick__text {
+  flex: 1;
+  min-width: 0;
+}
+.pick__value--spread {
+  justify-content: space-between;
+}
+
+/* Refine your matches */
+.refine {
+  --stroke: #fff;
+  flex: none;
+  width: 295px;
+  border-radius: var(--r-card);
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.04), 0 1px 2px 0 rgba(49, 46, 129, 0.04);
+  overflow: hidden;
+}
+.refine__body {
+  height: 100%;
+  padding: 20px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 85%);
+}
+.refine__title {
+  font: 600 20px/20px var(--font-ui);
+  color: var(--ink);
+}
+.refine__copy {
+  font: 500 16px/24px var(--font-ui);
+  color: var(--text-3);
+}
+.refine__cta {
+  margin-top: auto;
+}
+.btn--md {
+  height: 38px;
+  padding: 10px 14px;
+  font-size: 14px;
+}
+.btn--outline {
+  height: 40px;
+  padding: 10px 20px;
+  gap: 8px;
+  border: 1px solid var(--border);
+  background: #fff;
+  font: 600 14px/18px var(--font-ui);
+  color: #1e1b4b;
+}
+.btn--outline:hover {
+  background: var(--indigo-50);
+}
+
+/* Scheme cards: the offer card with a taller header, a benefit line and a full-width button */
+.offer--central {
+  background: linear-gradient(180deg, rgba(180, 214, 255, 0.2) 0%, rgba(247, 251, 255, 0.2) 60%);
+}
+.offer--sector {
+  background: radial-gradient(80% 60% at 100% 20%, rgba(243, 253, 249, 0.36) 0%, rgba(223, 245, 230, 0.6) 100%);
+}
+.offer--textile {
+  background: linear-gradient(180deg, rgba(250, 234, 197, 0.4) 0%, rgba(254, 250, 242, 0.4) 100%);
+}
+.offer__glow {
+  left: 177px;
+  top: 150px;
+  width: 162px;
+  height: 162px;
+  background: var(--indigo-50);
+  filter: blur(57px);
+}
+.offer__head--scheme .offer__bank {
+  align-items: center;
+}
+.offer__logo--scheme {
+  width: 56px;
+  height: 56px;
+  background: #f3f4f8;
+  box-shadow: inset 0 0 0 1.5px #fff;
+}
+.offer__logo--scheme img {
+  position: absolute;
+  max-width: none;
+  object-fit: fill;
+}
+.scheme-logo--cht img {
+  left: -8.11%;
+  top: -7.76%;
+  width: 120.66%;
+  height: 120.66%;
+}
+.scheme-logo--gsem,
+.scheme-logo--gujarat {
+  background: #fff;
+}
+.scheme-logo--gsem img {
+  left: 11.27%;
+  top: 13.1%;
+  width: 77.46%;
+  height: 77.46%;
+}
+.scheme-logo--gujarat img {
+  left: 23.08%;
+  top: 11.18%;
+  width: 53.84%;
+  height: 78.31%;
+}
+.offer__name--wrap {
+  white-space: normal;
+}
+.offer__prod--light {
+  font-weight: 400;
+  color: var(--text-3);
+}
+.scheme__benefit {
+  padding: 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.scheme__amount {
+  font: 500 32px/40px var(--font-figtree);
+  color: var(--ink);
+}
+.scheme__desc {
+  font: 400 14px/16px var(--font-figtree);
+  color: var(--text-2);
+}
+.btn--apply-wide {
+  width: 100%;
+}
+
+/* Grow beyond your state or sector */
+.grow {
+  min-height: 193px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: var(--grad-band);
+  box-shadow: var(--shadow-band);
+}
+.grow__glow {
+  left: 796px;
+  top: -127px;
+  width: 340px;
+  height: 340px;
+  background: rgba(99, 102, 241, 0.22);
+  opacity: 0.4;
+}
+.grow__map {
+  position: absolute;
+  left: 768px;
+  top: -10px;
+  width: 313px;
+  height: 313px;
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+.grow__pin {
+  position: absolute;
+  pointer-events: none;
+}
+.grow__pin--ne {
+  left: 920px;
+  top: 25px;
+  width: 105px;
+  height: 105px;
+}
+.grow__pin--w {
+  left: 796px;
+  top: 95px;
+  width: 65px;
+  height: 65px;
+}
+.grow__text {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.grow__eyebrow {
+  font: 600 14px/17px var(--font-figtree);
+  color: var(--indigo-700);
+}
+.grow__title {
+  max-width: 480px;
+  font: 600 22px/30px var(--font-ui);
+  color: var(--ink);
+}
+.grow__actions {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (max-width: 1179px) {
+  .refine {
+    flex: 1 1 100%;
+    width: auto;
+  }
+  .refine__cta {
+    margin-top: 16px;
+    align-self: flex-start;
+  }
+  .grow__map,
+  .grow__pin {
+    display: none;
+  }
+}
+
+/* Fixes after the Figma overlay: the hero row is 273px on this frame, the card body paints
+   above the corner glow, and the refine copy sits 12px under its title. */
+.hero-row:has(.refine) {
+  min-height: 273px;
+}
+.offer__body {
+  position: relative;
+}
+.refine__copy {
+  margin-top: 2px;
 }
