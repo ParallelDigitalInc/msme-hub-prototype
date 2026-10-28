@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MSME Hub — Loans</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Figtree:wght@400;500;600&family=Nunito:wght@900&family=Plus+Jakarta+Sans:wght@500;600;700&family=Urbanist:wght@400&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/loans.css">
+</head>
+<body>
+<div class="app">
+  <div class="backdrop backdrop--bl" aria-hidden="true"></div>
+  <div class="backdrop backdrop--tr" aria-hidden="true"></div>
+
+  <!-- ============ Sidebar ============ -->
+  <aside class="sidebar">
+    <button class="biz-switch" type="button">
+      <span class="biz-switch__id">
+        <span class="biz-switch__avatar">RF</span>
+        <span class="biz-switch__name">Ratan Fabrics<br>Pvt. Ltd.</span>
+      </span>
+      <img src="assets/icons/caret-up-down.svg" alt="" width="16" height="16">
+    </button>
+
+    <a class="nav-home" href="index.html">
+      <img src="assets/icons/home.svg" alt="" width="16" height="16">
+      <span class="nav-label">Dashboard</span>
+    </a>
+
+    <nav class="nav-group" data-collapsible>
+      <button class="nav-group__head" type="button" aria-expanded="true"><span class="nav-group__label" style="width:116px;text-align:left">Know your business</span><img src="assets/icons/chev-down.svg" alt="" width="12" height="12"></button>
+      <div class="nav-group__body">
+        <div class="nav-group__items">
+          <a class="nav-item" href="#"><span class="nav-item__ico"><img src="assets/icons/nav-bmr.svg" alt="" width="14" height="13"></span><span class="nav-label">BMR Insights</span></a>
+          <a class="nav-item" href="#"><span class="nav-item__ico"><img src="assets/icons/nav-gst-pouch.svg" alt="" width="12" height="14"><span class="nav-item__gst">GST</span></span><span class="nav-label">GST</span></a>
+          <a class="nav-item" href="#"><span class="nav-item__ico"><img src="assets/icons/nav-taxes.svg" alt="" width="14" height="14"></span><span class="nav-label">Taxes</span></a>
+          <a class="nav-item" href="#"><span class="nav-item__ico"><img src="assets/icons/nav-bank.svg" alt="" width="13" height="13"></span><span class="nav-label">Bank</span></a>
+        </div>
+      </div>
+    </nav>
+
+    <nav class="nav-group" data-collapsible>
+      <button class="nav-group__head" type="button" aria-expanded="true"><span class="nav-group__label">Get Financing</span><img src="assets/icons/chev-down.svg" alt="" width="12" height="12"></button>
+      <div class="nav-group__body">
+        <div class="nav-group__items" style="--gap:12px">
+          <a class="nav-item" href="loans.html" aria-current="page"><span class="nav-item__ico"><img src="assets/icons/nav-loans.svg" alt="" width="14" height="12"></span><span class="nav-label">Loans</span></a>
+          <a class="nav-item" href="#"><span class="nav-item__ico"><img src="assets/icons/nav-subsidies.svg" alt="" width="14" height="14"></span><span class="nav-label">Govt. Subsidies</span></a>
+          <a class="nav-item" href="#"><span class="nav-item__ico"><img src="assets/icons/nav-equity.svg" alt="" width="14" height="12"></span><span class="nav-label">Equity</span></a>
+          <a class="nav-item" href="#"><span class="nav-item__ico"><img src="assets/icons/nav-insurance.svg" alt="" width="14" height="14"></span><span class="nav-label">Insurance</span></a>
+        </div>
+      </div>
+    </nav>
+
+    <nav class="nav-group" data-collapsible>
+      <button class="nav-group__head" type="button" aria-expanded="true"><span class="nav-group__label">Grow Business</span><img src="assets/icons/chev-down.svg" alt="" width="12" height="12"></button>
+      <div class="nav-group__body">
+        <div class="nav-group__items">
+          <a class="nav-item" href="#"><span class="nav-item__ico"><img src="assets/icons/nav-news.svg" alt="" width="14" height="12"></span><span class="nav-label">Business News</span></a>
+          <a class="nav-item" href="#"><span class="nav-item__ico"><img src="assets/icons/nav-discover.svg" alt="" width="13" height="13"></span><span class="nav-label">Discover Buyers</span></a>
+        </div>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- ============ Main ============ -->
+  <main class="main main--loans">
+    <header class="topbar">
+      <nav class="crumbs crumbs--trail" aria-label="Breadcrumb">
+        <ol><li><a href="#">Finance Hub</a></li><li><span aria-current="page">Loans</span></li></ol>
+      </nav>
+
+      <div class="topbar__actions">
+        <label class="search">
+          <img src="assets/icons/search.svg" alt="" width="14" height="14">
+          <input type="search" placeholder="Search everything...">
+          <span class="kbd">⌘</span><span class="kbd">K</span>
+        </label>
+
+        <!-- Language -->
+        <div class="menu" data-menu>
+          <button class="pill-btn" type="button" aria-haspopup="menu" aria-expanded="false" aria-label="Language: English" data-tip="Language">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.75 3.5h7M5.25 2v1.5M7.5 3.5c-.5 2.6-2.3 4.7-5 5.75M3.6 5.5c.7 1.4 1.9 2.6 3.4 3.3M8.5 14l2.5-6 2.5 6M9.3 12.2h3.4"/></svg>
+            <span data-lang-label>EN</span>
+            <img src="assets/icons/caret-down.svg" alt="" width="12" height="12">
+          </button>
+          <div class="pop pop--lang" role="menu" aria-label="Choose language">
+            <p class="pop__head">Choose language</p>
+            <button class="pop__item" role="menuitemradio" aria-checked="true" data-lang="en" data-code="EN"><span class="pop__item-l">English<small>English</small></span><svg class="tick" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8.5l3 3 6-7"/></svg></button>
+            <button class="pop__item" role="menuitemradio" aria-checked="false" data-lang="hi" data-code="हिं"><span class="pop__item-l">हिन्दी<small>Hindi</small></span><svg class="tick" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8.5l3 3 6-7"/></svg></button>
+            <button class="pop__item" role="menuitemradio" aria-checked="false" data-lang="gu" data-code="ગુ"><span class="pop__item-l">ગુજરાતી<small>Gujarati</small></span><svg class="tick" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8.5l3 3 6-7"/></svg></button>
+            <button class="pop__item" role="menuitemradio" aria-checked="false" data-lang="mr" data-code="मरा"><span class="pop__item-l">मराठी<small>Marathi</small></span><svg class="tick" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8.5l3 3 6-7"/></svg></button>
+            <button class="pop__item" role="menuitemradio" aria-checked="false" data-lang="ta" data-code="த"><span class="pop__item-l">தமிழ்<small>Tamil</small></span><svg class="tick" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8.5l3 3 6-7"/></svg></button>
+            <button class="pop__item" role="menuitemradio" aria-checked="false" data-lang="bn" data-code="বা"><span class="pop__item-l">বাংলা<small>Bengali</small></span><svg class="tick" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8.5l3 3 6-7"/></svg></button>
+          </div>
+        </div>
+
+        <!-- Support -->
+        <div class="menu" data-menu>
+          <button class="icon-btn" type="button" aria-haspopup="dialog" aria-expanded="false" aria-label="Call support" data-tip="Call support">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.42 2.5H3.5a1 1 0 0 0-1 1.07A10.5 10.5 0 0 0 12.43 13.5a1 1 0 0 0 1.07-1v-1.92a1 1 0 0 0-.68-.95l-2.12-.7a1 1 0 0 0-1.03.24l-.86.86a8 8 0 0 1-3.64-3.64l.86-.86a1 1 0 0 0 .24-1.03l-.7-2.12a1 1 0 0 0-.95-.68Z"/></svg>
+          </button>
+          <div class="pop pop--support" role="dialog" aria-label="Call support">
+            <div class="support">
+              <span class="icon-circle" style="width:36px;height:36px;background:var(--indigo-50);color:var(--indigo-700)">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.42 2.5H3.5a1 1 0 0 0-1 1.07A10.5 10.5 0 0 0 12.43 13.5a1 1 0 0 0 1.07-1v-1.92a1 1 0 0 0-.68-.95l-2.12-.7a1 1 0 0 0-1.03.24l-.86.86a8 8 0 0 1-3.64-3.64l.86-.86a1 1 0 0 0 .24-1.03l-.7-2.12a1 1 0 0 0-.95-.68Z"/></svg>
+              </span>
+              <div>
+                <p class="support__label">MSME Hub helpline</p>
+                <a class="support__num" href="tel:+919876543210">+91 98765 43210</a>
+                <p class="support__meta">Mon–Sat · 9 am – 7 pm</p>
+                <p class="support__meta">Hindi, English, Gujarati</p>
+              </div>
+            </div>
+            <div class="support__actions">
+              <a class="btn btn--primary" href="tel:+919876543210">Call now</a>
+              <button class="btn btn--secondary stroke" type="button" data-callback>Request a callback</button>
+              <p class="support__done" role="status">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7"/></svg>
+                We'll call you within 2 hours
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Messages -->
+        <div class="menu" data-menu>
+          <button class="icon-btn" type="button" aria-haspopup="dialog" aria-expanded="false" aria-label="Messages, 2 unread" data-tip="Messages">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.5 9.75c0 .69-.56 1.25-1.25 1.25H6.5l-3 2.5V4.25C3.5 3.56 4.06 3 4.75 3h7.5c.69 0 1.25.56 1.25 1.25z"/><path d="M6 6.25h4.5M6 8.5h2.75"/></svg>
+            <span class="badge">2</span>
+          </button>
+          <div class="pop pop--msgs" role="dialog" aria-label="Messages">
+            <p class="pop__head">Messages <small>2 new</small></p>
+            <a class="pop__item msg is-unread" href="#">
+              <span class="msg__avatar" style="background:#312e81">AT</span>
+              <span class="msg__body">
+                <span class="msg__top"><span>Aarav Textiles</span><time>10:42 am</time></span>
+                <span class="msg__text">Thanks for connecting! Can you share your rates for combed cotton yarn?</span>
+              </span>
+            </a>
+            <a class="pop__item msg is-unread" href="#">
+              <span class="msg__avatar" style="background:#0e7490">MC</span>
+              <span class="msg__body">
+                <span class="msg__top"><span>Mehta &amp; Co. · Your CA</span><time>Yesterday</time></span>
+                <span class="msg__text">Your October GST summary is ready. ₹2.5 L input tax credit is still unclaimed.</span>
+              </span>
+            </a>
+            <a class="pop__item msg" href="#">
+              <span class="msg__avatar" style="background:#dc2626">KM</span>
+              <span class="msg__body">
+                <span class="msg__top"><span>Kotak Mahindra Bank</span><time>Mon</time></span>
+                <span class="msg__text">Your Key Fact Statement for the working capital loan is attached.</span>
+              </span>
+            </a>
+            <a class="pop__foot" href="#">Open inbox <img src="assets/icons/arrow-link.svg" alt="" width="16" height="16"></a>
+          </div>
+        </div>
+
+        <button class="icon-btn" type="button" aria-label="Notifications" data-tip="Notifications">
+          <img src="assets/icons/bell.svg" alt="" width="16" height="16">
+          <img class="icon-btn__dot" src="assets/icons/bell-dot.svg" alt="" width="7" height="7">
+        </button>
+
+        <button class="ask-ai" type="button">
+          <span class="orb"><img src="assets/icons/orb.svg" alt=""></span>
+          <span class="grad-text">Ask AI Mitra</span>
+        </button>
+      </div>
+    </header>
+
+    <div class="loans">
+      <h1 class="page-title">Loans</h1>
+
+      <div class="loans__top">
+        <nav class="tabs" role="tablist" aria-label="Loans sections">
+          <button class="tab" role="tab" aria-selected="true" type="button">Overview</button>
+          <button class="tab" role="tab" aria-selected="false" type="button">Loan Offers</button>
+          <button class="tab" role="tab" aria-selected="false" type="button">Compare</button>
+          <button class="tab" role="tab" aria-selected="false" type="button">Applications</button>
+          <button class="tab" role="tab" aria-selected="false" type="button">My Loans</button>
+        </nav>
+
+        <div class="loans__row">
+          <!-- Safe borrowing limit -->
+          <section class="limit stroke">
+            <div class="glow limit__glow" aria-hidden="true"></div>
+            <div class="limit__kpi">
+              <div class="limit__head">
+                <p class="limit__label">Safe Borrowing Limit</p>
+                <p class="limit__amount">Up to ₹50 Lakhs</p>
+              </div>
+              <div class="picks">
+                <a class="pick pick--collateral" href="#">
+                  <span class="pick__img"><img src="assets/img/pick-collateral.png" alt=""></span>
+                  <span class="pick__text">
+                    <span class="pick__label">Collateral-free</span>
+                    <span class="pick__value">Up to ₹50 L <img src="assets/icons/arrow-sm.svg" alt="" width="12" height="12"></span>
+                  </span>
+                </a>
+                <a class="pick pick--interest" href="#">
+                  <span class="pick__img"><img src="assets/img/pick-interest.png" alt=""></span>
+                  <span class="pick__text">
+                    <span class="pick__label">Lowest interest</span>
+                    <span class="pick__value">From 9.45% <img src="assets/icons/arrow-sm.svg" alt="" width="12" height="12"></span>
+                  </span>
+                </a>
+                <a class="pick pick--fast" href="#">
+                  <span class="pick__img"><img src="assets/img/pick-fast.png" alt=""></span>
+                  <span class="pick__text">
+                    <span class="pick__label">Fastest money</span>
+                    <span class="pick__value">In ~2 days <img src="assets/icons/arrow-sm.svg" alt="" width="12" height="12"></span>
+                  </span>
+                </a>
+              </div>
+            </div>
+            <a class="ai-prompt ai-prompt--pad" href="#" data-questions="How much can I safely borrow?|What EMI can my cash flow handle?|Will a bigger loan hurt my rank?">
+              <span class="ai-prompt__q">
+                <span class="orb"><img src="assets/icons/orb.svg" alt=""></span>
+                <span class="grad-text ai-prompt__text">How much can I safely borrow?</span>
+              </span>
+              <img src="assets/icons/arrow-right.svg" alt="" width="16" height="16">
+            </a>
+          </section>
+
+          <!-- CIBIL MSME Rank -->
+          <section class="band cmr stroke">
+            <div class="cmr__top">
+              <h2 class="cmr__head">CIBIL MSME Rank <img src="assets/icons/info.svg" alt="" width="16" height="16"></h2>
+              <div class="gauge" role="img" aria-label="CMR 2 of 10, Strong" data-gauge data-from="2" data-to="2">
+                <img class="gauge__ring" src="assets/icons/gauge-ring.svg" alt="">
+                <div class="gauge__centre">
+                  <img class="gauge__halo" src="assets/icons/gauge-halo.svg" alt="">
+                  <span class="gauge__label">CMR</span>
+                  <span class="gauge__value">2</span>
+                  <span class="gauge__chip"><img src="assets/icons/gauge-check.svg" alt="">Strong</span>
+                </div>
+                <img class="gauge__arc" src="assets/icons/gauge-arc.svg" alt="">
+                <img src="assets/icons/gauge-tick0.svg" alt="" style="left:3.03px;top:90.53px">
+                <img src="assets/icons/gauge-tick1.svg" alt="" style="left:21px;top:23.5px">
+                <img src="assets/icons/gauge-tick2.svg" alt="" style="left:54px;top:3.49px">
+                <img src="assets/icons/gauge-tick3.svg" alt="" style="left:93.17px;top:3.49px">
+                <img src="assets/icons/gauge-tick4.svg" alt="" style="left:121px;top:22.5px">
+                <img src="assets/icons/gauge-tick5.svg" alt="" style="left:137.5px;top:56.5px">
+                <img src="assets/icons/gauge-tick6.svg" alt="" style="left:136.5px;top:91.5px">
+                <img class="gauge__marker" src="assets/icons/gauge-marker.svg" alt="">
+                <span class="gauge__scale" style="left:27.04px">1</span>
+                <span class="gauge__scale" style="left:124.81px">10</span>
+              </div>
+            </div>
+            <a class="ai-prompt ai-prompt--pad" href="#" data-questions="How do I maintain the rank?|What moved my rank this month?|How do I reach CMR 1?">
+              <span class="ai-prompt__q">
+                <span class="orb"><img src="assets/icons/orb.svg" alt=""></span>
+                <span class="grad-text ai-prompt__text">How do I maintain the rank?</span>
+              </span>
+              <img src="assets/icons/arrow-right.svg" alt="" width="16" height="16">
+            </a>
+          </section>
+        </div>
+      </div>
+
+      <!-- Top loan matches -->
+      <section class="band matches stroke">
+        <div class="matches__head">
+          <h2 class="band__title--grad"><span class="grad-text grad-text--title">Top loan matches</span><span class="band__count">7</span></h2>
+          <a class="link link--lg" href="#">See all 7 offers <img src="assets/icons/arrow-apply.svg" alt="" width="16" height="16"></a>
+        </div>
+
+        <div class="filters">
+          <div class="filters__chips">
+            <button class="fchip is-on" type="button" data-filter>All</button>
+            <button class="fchip" type="button" data-filter>Collateral Free</button>
+            <button class="fchip" type="button" data-filter>Working capital</button>
+            <button class="fchip" type="button" data-filter>Term loan</button>
+            <button class="fchip" type="button" data-filter>Fee under 1%</button>
+            <button class="fchip fchip--ghost" type="button"><img src="assets/icons/filter.svg" alt="" width="14" height="14">More filters</button>
+          </div>
+          <button class="sort" type="button">Sort by <b>Lowest interest</b> <img src="assets/icons/caret-sort.svg" alt="" width="14" height="14"></button>
+        </div>
+
+        <div class="offers">
+          <article class="offer offer--citi stroke lift">
+            <div class="offer__head">
+              <div class="offer__dots" aria-hidden="true"></div>
+              <div class="offer__tags"><span class="tag">Low Interest</span><span class="tag tag--green">Subsidy Linked</span></div>
+              <div class="offer__bank">
+                <span class="offer__logo offer__logo--citi"><img src="assets/img/loan-citi.png" alt="Citi Bank"></span>
+                <div class="offer__who"><p class="offer__name">Citi Bank</p><p class="offer__prod">Working Capital Loan</p></div>
+              </div>
+            </div>
+            <div class="offer__body">
+              <div class="offer__kpis">
+                <div class="kpi"><span class="kpi__label">Loan up to</span><span class="kpi__amount">₹50 L</span></div>
+                <div class="kpi kpi--rate"><span class="kpi__label">Interest</span><span class="kpi__rate">9.45% <small>p.a.</small></span></div>
+              </div>
+              <div class="offer__rows">
+                <div class="offer__row"><span>Tenure</span><b>3 years</b></div>
+                <div class="offer__row"><span>Est. EMI</span><b>₹1,60,048 / month</b></div>
+                <div class="offer__row"><span>Subsidy</span><b>15% CLCSS</b></div>
+              </div>
+              <div class="offer__foot">
+                <label class="compare"><input type="checkbox" id="compare-citi">Compare</label>
+                <a class="btn btn--apply" href="#">Apply now <img src="assets/icons/arrow-apply.svg" alt="" width="16" height="16"></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="offer offer--axis stroke lift">
+            <div class="offer__head">
+              <div class="offer__dots" aria-hidden="true"></div>
+              <div class="offer__tags"><span class="tag">Low Interest</span></div>
+              <div class="offer__bank">
+                <span class="offer__logo"><img src="assets/img/loan-axis.png" alt="Axis Bank"></span>
+                <div class="offer__who"><p class="offer__name">Axis Bank</p><p class="offer__prod">ECGLS 5.0 Cash Credit Limit</p></div>
+              </div>
+            </div>
+            <div class="offer__body">
+              <div class="offer__kpis">
+                <div class="kpi"><span class="kpi__label">Loan up to</span><span class="kpi__amount">₹20 L</span></div>
+                <div class="kpi kpi--rate"><span class="kpi__label">Interest</span><span class="kpi__rate">9.85% <small>p.a.</small></span></div>
+              </div>
+              <div class="offer__rows">
+                <div class="offer__row"><span>Tenure</span><b>Renews yearly</b></div>
+                <div class="offer__row"><span>Pay on</span><b>Used amount</b></div>
+                <div class="offer__row"><span>Fee</span><b>0.75%</b></div>
+              </div>
+              <div class="offer__foot">
+                <label class="compare"><input type="checkbox" id="compare-axis">Compare</label>
+                <a class="btn btn--apply" href="#">Apply now <img src="assets/icons/arrow-apply.svg" alt="" width="16" height="16"></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="offer offer--sbi stroke lift">
+            <div class="offer__head">
+              <div class="offer__dots" aria-hidden="true"></div>
+              <div class="offer__tags"><span class="tag">Low Interest</span></div>
+              <div class="offer__bank">
+                <span class="offer__logo"><img src="assets/img/loan-sbi.png" alt="SBI"></span>
+                <div class="offer__who"><p class="offer__name">SBI</p><p class="offer__prod">Cash Credit Limit</p></div>
+              </div>
+            </div>
+            <div class="offer__body">
+              <div class="offer__kpis">
+                <div class="kpi"><span class="kpi__label">Loan up to</span><span class="kpi__amount">₹20 L</span></div>
+                <div class="kpi kpi--rate"><span class="kpi__label">Interest</span><span class="kpi__rate">9.45% <small>p.a.</small></span></div>
+              </div>
+              <div class="offer__rows">
+                <div class="offer__row"><span>Tenure</span><b>Renews yearly</b></div>
+                <div class="offer__row"><span>Pay on</span><b>Used amount</b></div>
+                <div class="offer__row"><span>Fee</span><b>0.65%</b></div>
+              </div>
+              <div class="offer__foot">
+                <label class="compare"><input type="checkbox" id="compare-sbi">Compare</label>
+                <a class="btn btn--apply" href="#">Apply now <img src="assets/icons/arrow-apply.svg" alt="" width="16" height="16"></a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <a class="ai-prompt ai-prompt--pad" href="#" data-questions="Which offer is cheapest for me?|Can I get a lower rate with collateral?|What documents will Citi ask for?">
+          <span class="ai-prompt__q">
+            <span class="orb"><img src="assets/icons/orb.svg" alt=""></span>
+            <span class="grad-text ai-prompt__text">Which offer is cheapest for me?</span>
+          </span>
+          <img src="assets/icons/arrow-right.svg" alt="" width="16" height="16">
+        </a>
+      </section>
+
+      <!-- Your borrowing -->
+      <section class="band borrowing stroke">
+        <div class="borrowing__head">
+          <h2 class="band__title--grad"><span class="grad-text grad-text--title">Your borrowing</span></h2>
+          <a class="link link--lg" href="#">Go to My Loans <img src="assets/icons/arrow-apply.svg" alt="" width="16" height="16"></a>
+        </div>
+        <div class="borrowing__body">
+          <div class="summary">
+            <div class="owe">
+              <p class="owe__label">You owe today</p>
+              <div class="owe__row">
+                <p class="owe__amount">₹64.92 L</p>
+                <span class="chip chip--ok"><img src="assets/icons/trend-down.svg" alt="" width="14" height="14">₹0 overdue</span>
+              </div>
+            </div>
+            <p class="util"><b>78%</b> of ₹83.22 L credit in use</p>
+          </div>
+          <div class="sbar" role="img" aria-label="EMI loans ₹50.22 L, limits used ₹14.70 L, free to draw ₹18.30 L">
+            <span class="sbar__emi" style="flex:50.22"></span>
+            <span class="sbar__limits" style="flex:14.70"></span>
+            <span class="sbar__free" style="flex:18.30"></span>
+          </div>
+          <div class="legend">
+            <div class="legend__item">
+              <p class="legend__key"><span class="legend__dot" style="background:#5450de"></span>EMI loans</p>
+              <p class="legend__amount">₹50.22 L</p>
+              <p class="legend__sub">Monthly EMIs</p>
+            </div>
+            <div class="legend__item">
+              <p class="legend__key"><span class="legend__dot" style="background:#1ebaaa"></span>Limits used</p>
+              <p class="legend__amount">₹14.70 L</p>
+              <p class="legend__sub">Cash credit and card</p>
+            </div>
+            <div class="legend__item">
+              <p class="legend__key"><span class="legend__dot" style="background:#e2e8f0"></span>Free to draw</p>
+              <p class="legend__amount">₹18.30 L</p>
+              <p class="legend__sub">Unused limit</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</div>
+
+<script src="js/app.js"></script>
+<script src="js/gauge.js"></script>
+<script src="js/loans.js"></script>
+</body>
+</html>

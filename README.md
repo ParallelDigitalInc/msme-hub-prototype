@@ -7,6 +7,7 @@ A clickable HTML/CSS prototype of the MSME Hub dashboard. It's built from the Fi
 ## What's in it
 
 - The dashboard screen. It adapts to desktop widths from 1024px to 1920px+: below 1320px the sidebar becomes an icon rail, and below 1180px the BMR card moves under the Daily digest.
+- The Loans screen (`loans.html`), reached from the sidebar or "Explore loan offers": safe borrowing limit, CIBIL MSME Rank, top loan matches and a borrowing summary.
 - Top bar: page title (it becomes a breadcrumb on sub-pages), search (⌘K), language menu, support helpline (dummy number), messages, notifications and Ask AI Mitra.
 - Micro-interactions:
   - a shine around the Daily digest border on load;
@@ -22,11 +23,15 @@ All data is sample data. Mobile layouts haven't been designed yet.
 
 ```
 index.html          dashboard screen
+loans.html          Loans screen
 css/tokens.css      colours, type, shadows, radii (shared)
-css/components.css  sidebar, top bar, menus, buttons, chips, orb (shared)
-css/dashboard.css   styles for this screen only
+css/components.css  sidebar, top bar, menus, buttons, chips, orb, gauge (shared)
+css/dashboard.css   styles for the dashboard only
+css/loans.css       styles for the Loans screen only
 js/app.js           menus, sidebar groups, rotating AI questions (shared)
-js/dashboard.js     digest shine, BMR gauge animation
+js/gauge.js         BMR / CMR gauge animation (shared)
+js/dashboard.js     digest shine, scrollable business cards
+js/loans.js         tabs, filter chips, compare, borrowing bar intro
 assets/             icons and images exported from Figma
 ```
 

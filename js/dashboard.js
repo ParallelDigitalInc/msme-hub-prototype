@@ -1,4 +1,4 @@
-/* Dashboard-only motion: daily digest border shine and the BMR gauge moving to its new score. */
+/* Dashboard-only motion: the daily digest border shine and the scrollable business cards. */
 (function () {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -34,59 +34,4 @@
     new ResizeObserver(update).observe(row);
     update();
   });
-
-  /* ---------- BMR gauge: animate from the previous score to the current one ---------- */
-
-  const gauge = document.querySelector('[data-gauge]');
-  if (!gauge) return;
-
-  const DEG_PER_POINT = 30; // 270° dial across scores 1–10
-  const CAP = 6; // extra degrees so the arc's rounded end sits under the marker
-  const from = Number(gauge.dataset.from);
-  const to = Number(gauge.dataset.to);
-  const value = gauge.querySelector('.gauge__value');
-  const chip = gauge.querySelector('.gauge__chip');
-
-  function render(score) {
-    gauge.style.setProperty('--turn', (score - to) * DEG_PER_POINT + 'deg');
-    gauge.style.setProperty('--sweep', (score - 1) * DEG_PER_POINT + CAP + 'deg');
-  }
-
-  if (reduceMotion || !firstVisit('opl.gaugeIntro')) {
-    render(to);
-    return;
-  }
-
-  render(from);
-  value.textContent = from;
-
-  const DELAY = 900;
-  const DURATION = 1400;
-  const ease = (t) => 1 - Math.pow(1 - t, 3);
-  let start = null;
-  let done = false;
-
-  function frame(now) {
-    if (done) return;
-    if (start === null) start = now;
-    const t = Math.min((now - start) / DURATION, 1);
-    render(from + (to - from) * ease(t));
-    if (t > 0.55 && value.textContent !== String(to)) {
-      value.textContent = to;
-      value.classList.add('is-pop');
-      chip.classList.add('is-pop');
-    }
-    if (t < 1) requestAnimationFrame(frame);
-    else finish();
-  }
-  function finish() {
-    done = true;
-    render(to);
-    gauge.style.removeProperty('--sweep');
-    value.textContent = to;
-  }
-  setTimeout(() => requestAnimationFrame(frame), DELAY);
-
-  // If frames never run (tab in the background, headless capture), still land on the real score.
-  setTimeout(() => done || finish(), DELAY + DURATION + 600);
 })();
